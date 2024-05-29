@@ -19,7 +19,3 @@ module SolidusTracking
     end
   end
 end
-
-if Spree.solidus_gem_version >= Gem::Version.new('2.9.0')
-  Spree::MailerSubscriber.prepend(SolidusTracking::Spree::MailerSubscriber::DisableConfirmEmail)
-end
