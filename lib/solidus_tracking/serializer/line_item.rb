@@ -15,7 +15,7 @@ module SolidusTracking
           'Quantity' => line_item.quantity,
           'ItemPrice' => line_item.price,
           'RowTotal' => line_item.amount,
-          'ProductURL' => SolidusTracking.configuration.variant_url_builder.call(line_item.variant),
+          'ProductURL' => "https://www.esimply.co/products/#{line_item.variant.slug}",
           'ImageURL' => SolidusTracking.configuration.image_url_builder.call(line_item.variant),
           'ProductCategories' => line_item.product.taxons.flat_map(&:self_and_ancestors).map(&:name),
 
